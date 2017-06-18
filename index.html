@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <script type='module' src='./tetris.js'></script>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        font-family: sans-serif;
+        text-align: center;
+        background: #101010;
+        color: white;
+      }
+      #tetris {
+        height: calc(100vh - 4rem);
+      }
+      .toolbar {
+        font-size: 1.6rem;
+        line-height: 3rem;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nomodule>
+      Your browser does not support ES2015 modules.
+    </nomodule>
+
+    <div class='toolbar'>
+      <button onclick='toggleMusic()'>Toggle music</button>
+      <button onclick='newGame()'>Start over</button>
+      <strong>Score: <span id='score'>0</span></strong>
+    </div>
+
+    <canvas height='400' width='200' id='tetris'></canvas>
+
+    <audio loop>
+      <source src='https://archive.org/download/TetrisThemeMusic/Tetris.ogg' type='audio/ogg'>
+      <source src='https://ia800504.us.archive.org/33/items/TetrisThemeMusic/Tetris.mp3' type='audio/mpeg'>
+      <source src='https://ia800504.us.archive.org/33/items/TetrisThemeMusic/TetrisThemeMusic_vbr.m3u' type='audio/mpegurl'>
+    </audio>
+  </body>
+</html>
