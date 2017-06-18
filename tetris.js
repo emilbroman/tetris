@@ -3,6 +3,7 @@ import { TetrisGame } from './lib/TetrisGame.js'
 import { Player } from './lib/Player.js'
 import { GameBoard } from './lib/GameBoard.js'
 import { KeyboardController } from './lib/controller/KeyboardController.js'
+import { TouchController } from './lib/controller/TouchController.js'
 import { TimedDropController } from './lib/controller/TimedDropController.js'
 import { CompositeController } from './lib/controller/CompositeController.js'
 import { MatrixCollisionDetector } from './lib/collision/MatrixCollisionDetector.js'
@@ -45,7 +46,8 @@ function newGame () {
 
   const controller = new CompositeController([
     new KeyboardController(game),
-    new TimedDropController(game)
+    new TimedDropController(game),
+    new TouchController(game)
   ])
   controller.listen()
 
