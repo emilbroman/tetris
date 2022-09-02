@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <script type='module' src='./tetris.js'></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script type="module" src="./tetris.js"></script>
     <style>
-      body, html {
+      body,
+      html {
         margin: 0;
         padding: 0;
         font-size: 10px;
@@ -22,7 +26,8 @@
         font-size: 1.6rem;
         line-height: 3rem;
       }
-      button, .button {
+      button,
+      .button {
         font: inherit;
         color: inherit;
         background: transparent;
@@ -35,26 +40,38 @@
     </style>
   </head>
   <body>
-    <nomodule>
-      Your browser does not support ES2015 modules.
-    </nomodule>
+    <nomodule>Your browser does not support ES2015 modules.</nomodule>
 
-    <div class='toolbar'>
-      <button onclick='toggleMusic()'>Toggle music</button>
-      <button onclick='newGame()'>Start over</button>
-      <strong>Score: <span id='score'>0</span></strong>
+    <div class="toolbar">
+      <button onclick="toggleMusic()">Toggle music</button>
+      <button onclick="newGame()">Start over</button>
+      <strong>Score: <span id="score">0</span></strong>
     </div>
 
-    <canvas height='400' width='200' id='tetris'></canvas>
+    <canvas height="400" width="200" id="tetris"></canvas>
 
-    <div class='toolbar'>
-      <a class='button' href='https://github.com/emilniklas/tetris' target='_blank'>GitHub</a>
+    <div class="toolbar">
+      <a
+        class="button"
+        href="https://github.com/emilniklas/tetris"
+        target="_blank"
+        >GitHub</a
+      >
     </div>
 
     <audio loop>
-      <source src='https://archive.org/download/TetrisThemeMusic/Tetris.ogg' type='audio/ogg'>
-      <source src='https://ia800504.us.archive.org/33/items/TetrisThemeMusic/Tetris.mp3' type='audio/mpeg'>
-      <source src='https://ia800504.us.archive.org/33/items/TetrisThemeMusic/TetrisThemeMusic_vbr.m3u' type='audio/mpegurl'>
+      <source
+        src="https://archive.org/download/TetrisThemeMusic/Tetris.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="https://ia800504.us.archive.org/33/items/TetrisThemeMusic/Tetris.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="https://ia800504.us.archive.org/33/items/TetrisThemeMusic/TetrisThemeMusic_vbr.m3u"
+        type="audio/mpegurl"
+      />
     </audio>
   </body>
 </html>
