@@ -1,0 +1,26 @@
+name: Deploy
+on: [push]
+jobs:
+  build-and-push-to-gcr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: RafikFarhad/push-to-gcr-github-action@v4.1
+        env:
+          DOCKER_BUILDKIT: "1"
+        with:
+          gcloud_service_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          registry: europe-north1-docker.pkg.dev
+          project_id: emilbroman
+          image_name: tetris/tetris
+          image_tag: latest,${{ github.sha }}
+
+      - uses: ameydev/gke-kubectl-action@master
+        env:
+          PROJECT_ID: emilbroman
+          APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          CLUSTER_NAME: emilbroman
+          ZONE_NAME: europe-north1-a
+        with:
+          args: set image deployment/tetris tetris=europe-north1-docker.pkg.dev/emilbroman/tetris/tetris:${{ github.sha }}
